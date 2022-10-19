@@ -19,13 +19,14 @@ class Gun{
 
 class Player{
 	public:
-		Player(Gun *gun1, Gun *gun2);
+		Player();
 		void getnickname();
 		void showplayerinfos();
     private:
         std::string _name;
         std::string _lastname;
         std::string _nickname;
+
         int _premium;
 };
 

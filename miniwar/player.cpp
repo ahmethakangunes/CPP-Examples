@@ -12,7 +12,7 @@
 
 #include "miniwar.hpp"
 
-Player::Player(Gun *gun1, Gun *gun2)
+Player::Player()
 {
 	std::string index;
     std::cout << "Name: ";
@@ -21,12 +21,7 @@ Player::Player(Gun *gun1, Gun *gun2)
     getline(std::cin, _lastname);
     std::cout << "Username: ";
     getline(std::cin, _nickname);
-	std::cout << "Please select gun: (1: AK-47 2: M4A1)" << std::endl;
-	getline(std::cin, index);
-	if (stoi(index) == 1)
-		_gun = *gun1;
-	if (stoi(index) == 2)
-		_gun = *gun2;
+
 }
 
 void Player::showplayerinfos(){

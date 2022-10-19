@@ -44,7 +44,7 @@ int main()
         if (command == "ADD")
         {
             system("reset");
-            Player player(gun1, gun2);
+            Player player;
             plist.push_back(player);
             count++;
         }
