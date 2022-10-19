@@ -12,21 +12,6 @@
 
 #include "miniwar.hpp"
 
-Gun::Gun(const std::string& name, int bullet, const std::string& color, int damage){
-    _name = name;
-    _bullet = bullet;
-    _color = color;
-    _damage = damage;
-}
-
 Gun::~Gun(){
 
-}
-
-void Gun::getguninfos()
-{
-    std::cout << "Name = " << _name << std::endl;
-    std::cout << "Color = " << _color << std::endl;
-    std::cout << "Bullet = " << _bullet << std::endl;
-    std::cout << "Damage = " << _damage << std::endl;
 }

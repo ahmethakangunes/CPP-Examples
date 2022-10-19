@@ -14,9 +14,6 @@
 
 int main()
 {
-    Gun *gun1 = new Gun("M4A1", 30, "Blue", 12);
-    Gun *gun2 = new Gun("AK-47", 30, "Dark", 18);
-
     std::vector<Player> plist;
     std::string command;
     int count = 1;
@@ -44,9 +41,11 @@ int main()
         if (command == "ADD")
         {
             system("reset");
-            Player player;
+            Player player = *new Player();
             plist.push_back(player);
             count++;
         }
+        if (command.empty())
+            exit (0);
     }
 }

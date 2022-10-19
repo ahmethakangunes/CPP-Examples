@@ -5,29 +5,27 @@
 #include <vector>
 
 class Gun{
-	public:
-        Gun(const std::string& name, int bullet, const std::string& color, int damage);
-        void getguninfos();
-        ~Gun();
-		int a;
-    private:
-        std::string _name;
-        std::string _color;
-        int _bullet;
-        int _damage;
+public:
+	std::string _gunname;
+	std::string _color;
+	int _bullet;
+	int _damage;
+	~Gun();
 };
 
-class Player{
-	public:
-		Player();
-		void getnickname();
-		void showplayerinfos();
-    private:
-        std::string _name;
-        std::string _lastname;
-        std::string _nickname;
+class Player: public Gun{
+public:
+	Player();
+	void getnickname();
+	void showplayerinfos();
+	void setgun();
+	void setgun2();
+private:
 
-        int _premium;
+	std::string _name;
+	std::string _lastname;
+	std::string _nickname;
+	int _premium;
 };
 
 #endif
