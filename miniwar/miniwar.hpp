@@ -28,4 +28,7 @@ private:
 	int _premium;
 };
 
+void username(std::vector<Player> plist);
+void deluser(std::vector<Player> plist, int index);
+
 #endif

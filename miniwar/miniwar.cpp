@@ -20,31 +20,37 @@ int main()
     while (1)
     {
         system("reset");
-        std::cout << "ADD = Add new player." << std::endl;
-        std::cout << "SEARCH = Show players and get player infos." << std::endl;
-        std::cout << "Command -- > ";
+        std::cout << "1 -> Add new player." << std::endl;
+        std::cout << "2 -> Show players and get player infos." << std::endl;
+        std::cout << "3 -> Delete user." << std::endl;
+		std::cout << "Command --> ";
         getline(std::cin, command);
-        if (command == "SEARCH")
+		if (command == "1")
+		{
+			system("reset");
+			Player player;
+			plist.push_back(player);
+			count++;
+		}
+        if (command == "2")
         {
             system("reset");
             std::string index;
-            for (int i = 0; i < plist.size(); i++)
-            {
-				std::cout << i << ". ";
-                plist[i].getnickname();
-            }
+			username(plist);
             std::cout << "Please select index" << " --> ";
             getline(std::cin, index);
             plist[stoi(index)].showplayerinfos();
             system("reset");
         }
-        if (command == "ADD")
-        {
-            system("reset");
-            Player player = *new Player();
-            plist.push_back(player);
-            count++;
-        }
+		if (command == "3")
+		{
+			system("reset");
+			std::string index;
+			username(plist);
+			std::cout << "Please select index" << " --> ";
+			getline(std::cin, index);
+			deluser(plist, stoi(index));
+		}
         if (command.empty())
             exit (0);
     }

@@ -49,7 +49,7 @@ void Player::getnickname()
 
 void Player::setgun()
 {
-	_gunname = "M4A1";
+	_gunname = "AK-47";
 	_color = "DARK";
 	_bullet = 30;
 	_damage = 18;
@@ -57,7 +57,7 @@ void Player::setgun()
 
 void Player::setgun2()
 {
-	_gunname = "AK-47";
+	_gunname = "M4A1";
 	_color = "BLUE";
 	_bullet = 30;
 	_damage = 15;
