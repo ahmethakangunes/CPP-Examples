@@ -15,9 +15,9 @@ void deluser(std::vector<Player> &plist, int index)
 }
 
 void beginwar(std::vector<Player> &plist, int player1, int player2) {
+	int x = 1;
 	while (plist[player1].gethp() > 0 && plist[player2].gethp() > 0)
 	{
-		int x = rand();
 		if (x % 2 == 0)
 		{
 			int hit = rand() % plist[player1]._damage;
@@ -25,6 +25,8 @@ void beginwar(std::vector<Player> &plist, int player1, int player2) {
 			{
 				plist[player2].hitdamage(hit);
 				plist[player1]._bullet -= 1;
+				if (hit >= 20)
+					std::cout << "HEADSHOT ! ";
 				std::cout << plist[player1].getusername() << " hit " << hit << " " << plist[player2].getusername() << std::endl;
 			}
 			if (plist[player2].gethp() <= 0)
@@ -37,11 +39,14 @@ void beginwar(std::vector<Player> &plist, int player1, int player2) {
 			{
 				plist[player1].hitdamage(hit);
 				plist[player2]._bullet -= 1;
+				if (hit >= 20)
+					std::cout << "HEADSHOT ! ";
 				std::cout << plist[player2].getusername() << " hit " << hit << " " <<plist[player1].getusername() << std::endl;
 			}
 			if (plist[player1].gethp() <= 0)
 				std::cout << plist[player1].getusername() << " died." << std::endl;
 		}
+		x++;
 		sleep(1);
 	}
 }
