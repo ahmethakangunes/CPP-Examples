@@ -42,9 +42,10 @@ void Player::showplayerinfos(){
 	getline(std::cin, command);
 }
 
-void Player::getnickname()
+std::string Player::getnickname()
 {
     std::cout << _nickname << std::endl;
+	return (_nickname);
 }
 
 void Player::setgun()
@@ -61,4 +62,24 @@ void Player::setgun2()
 	_color = "BLUE";
 	_bullet = 30;
 	_damage = 15;
+}
+
+void Player::hitdamage(int hit)
+{
+	_hp -= hit;
+}
+
+void Player::sethp()
+{
+	_hp = 100;
+}
+
+std::string Player::getusername()
+{
+	return (_nickname);
+}
+
+int Player::gethp()
+{
+	return (_hp);
 }

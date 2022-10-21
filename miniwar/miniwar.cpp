@@ -23,12 +23,14 @@ int main()
         std::cout << "1 -> Add new player." << std::endl;
         std::cout << "2 -> Show players and get player infos." << std::endl;
         std::cout << "3 -> Delete user." << std::endl;
+		std::cout << "4 -> Lets begin war !" << std::endl;
 		std::cout << "Command --> ";
         getline(std::cin, command);
 		if (command == "1")
 		{
 			system("reset");
 			Player player;
+			player.sethp();
 			plist.push_back(player);
 			count++;
 		}
@@ -50,6 +52,22 @@ int main()
 			std::cout << "Please select index" << " --> ";
 			getline(std::cin, index);
 			deluser(plist, stoi(index));
+		}
+		if (command == "4")
+		{
+			std::string index;
+			int player1;
+			int player2;
+			username(plist);
+			std::cout << "Please select 2 player" << std::endl;
+			std::cout << "Player 1 --> ";
+			getline(std::cin, index);
+			player1 = stoi(index);
+			std::cout << "Player 2 --> ";
+			getline(std::cin, index);
+			player2 = stoi(index);
+			beginwar(plist, player1, player2);
+			getchar();
 		}
         if (command.empty())
             exit (0);
