@@ -15,8 +15,6 @@ void deluser(std::vector<Player> &plist, int index)
 }
 
 void beginwar(std::vector<Player> &plist, int player1, int player2) {
-	std::string username1 = plist[player1].getusername();
-	std::string username2 = plist[player2].getusername();
 	while (plist[player1].gethp() > 0 && plist[player2].gethp() > 0)
 	{
 		int x = rand();

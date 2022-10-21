@@ -52,8 +52,8 @@ void Player::setgun()
 {
 	_gunname = "AK-47";
 	_color = "DARK";
-	_bullet = 30;
-	_damage = 18;
+	_bullet = 20;
+	_damage = 21;
 }
 
 void Player::setgun2()
