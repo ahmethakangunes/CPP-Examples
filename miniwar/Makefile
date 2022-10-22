@@ -1,7 +1,7 @@
 NAME = miniwar
 CC = g++
 CFLASG = -Wall -Wextra -Werror
-SRCS = gun.cpp miniwar.cpp player.cpp utils.cpp
+SRCS = gun.cpp miniwar.cpp player.cpp utils.cpp utilswar.cpp
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

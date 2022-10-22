@@ -6,6 +6,11 @@
 #include <time.h>
 #include <unistd.h>
 
+ struct Infos{
+	int player1;
+	int player2;
+};
+
 class Gun{
 public:
 	std::string _gunname;
@@ -22,7 +27,6 @@ public:
 	void showplayerinfos();
 	void setgun();
 	void setgun2();
-	int checkplayer(Player &player);
 	std::string getusername() {return _nickname;}
 	void hitdamage(int hit) {_hp -=hit;}
 	int gethp() {return _hp;}
@@ -37,5 +41,7 @@ void username(std::vector<Player> plist);
 void deluser(std::vector<Player> &plist, int index);
 int beginwar(std::vector<Player> &plist, int player1, int player2);
 int	selectgun(std::vector<Player> &plist, int player1, int player2);
+void letsgowar(std::vector<Player> &plist, Infos infos);
+
 
 #endif
