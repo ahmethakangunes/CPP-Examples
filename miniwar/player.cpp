@@ -64,18 +64,3 @@ void Player::setgun2()
 	_bullet = 30;
 	_damage = 15;
 }
-
-void Player::hitdamage(int hit)
-{
-	_hp -= hit;
-}
-
-std::string Player::getusername()
-{
-	return (_nickname);
-}
-
-int Player::gethp()
-{
-	return (_hp);
-}

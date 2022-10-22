@@ -22,9 +22,9 @@ public:
 	void showplayerinfos();
 	void setgun();
 	void setgun2();
-	std::string getusername();
-	void hitdamage(int hit);
-	int gethp();
+	std::string getusername() {return _nickname;}
+	void hitdamage(int hit) {_hp -=hit;}
+	int gethp() {return _hp;}
 private:
 	std::string _name;
 	std::string _lastname;
