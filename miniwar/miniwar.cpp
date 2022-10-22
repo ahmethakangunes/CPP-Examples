@@ -30,7 +30,6 @@ int main()
 		{
 			system("reset");
 			Player player;
-			player.sethp();
 			plist.push_back(player);
 			count++;
 		}

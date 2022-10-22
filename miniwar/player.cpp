@@ -14,6 +14,7 @@
 
 Player::Player()
 {
+	_hp = 100;
 	std::string gun;
 	std::string index;
 
@@ -67,11 +68,6 @@ void Player::setgun2()
 void Player::hitdamage(int hit)
 {
 	_hp -= hit;
-}
-
-void Player::sethp()
-{
-	_hp = 100;
 }
 
 std::string Player::getusername()

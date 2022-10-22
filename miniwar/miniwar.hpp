@@ -22,7 +22,6 @@ public:
 	void showplayerinfos();
 	void setgun();
 	void setgun2();
-	void sethp();
 	std::string getusername();
 	void hitdamage(int hit);
 	int gethp();
