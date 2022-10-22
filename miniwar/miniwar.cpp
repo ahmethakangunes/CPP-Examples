@@ -30,7 +30,8 @@ int main()
 		{
 			system("reset");
 			Player player;
-			plist.push_back(player);
+			if (player.checkplayer(player))
+				plist.push_back(player);
 			count++;
 		}
         if (command == "2")

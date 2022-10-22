@@ -22,6 +22,7 @@ public:
 	void showplayerinfos();
 	void setgun();
 	void setgun2();
+	int checkplayer(Player &player);
 	std::string getusername() {return _nickname;}
 	void hitdamage(int hit) {_hp -=hit;}
 	int gethp() {return _hp;}
@@ -34,6 +35,7 @@ private:
 
 void username(std::vector<Player> plist);
 void deluser(std::vector<Player> &plist, int index);
-void beginwar(std::vector<Player> &plist, int player1, int player2);
+int beginwar(std::vector<Player> &plist, int player1, int player2);
+int	selectgun(std::vector<Player> &plist, int player1, int player2);
 
 #endif
