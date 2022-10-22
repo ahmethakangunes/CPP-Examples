@@ -4,7 +4,7 @@ void username(std::vector<Player> plist)
 {
 	for (int i = 0; i < plist.size(); i++)
 	{
-		std::cout << i << ". ";
+		std::cout << i + 1 << ". ";
 		plist[i].getnickname();
 	}
 }
@@ -16,8 +16,7 @@ void deluser(std::vector<Player> &plist, int index)
 
 int beginwar(std::vector<Player> &plist, int player1, int player2) {
 	if (selectgun(plist, player1, player2)) {
-		std::cout << "selam" << std::endl;
-		std::cout << plist[player1].gethp() << plist[player2].gethp();
+		system("reset");
 		int x = 1;
 		while (plist[player1].gethp() > 0 && plist[player2].gethp() > 0) {
 			if (x % 2 == 0) {
@@ -39,8 +38,10 @@ int beginwar(std::vector<Player> &plist, int player1, int player2) {
 					plist[player2]._bullet -= 1;
 					if (hit >= 20)
 						std::cout << "HEADSHOT ! ";
-					std::cout << plist[player2].getusername() << " hit " << hit << " " << plist[player1].getusername()
-							  << std::endl;
+					if (hit > 0)
+						std::cout << plist[player2].getusername() << " hit " << hit << " " << plist[player1].getusername() << std::endl;
+					else
+						std::cout << plist[player2].getusername() << " Missed shoot !" << std::endl;
 				}
 				if (plist[player1].gethp() <= 0)
 					std::cout << plist[player1].getusername() << " died." << std::endl;

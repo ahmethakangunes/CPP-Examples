@@ -55,6 +55,7 @@ int main()
 		}
 		if (command == "4")
 		{
+			system("reset");
 			std::string index;
 			int player1;
 			int player2;
@@ -62,10 +63,10 @@ int main()
 			std::cout << "Please select 2 player" << std::endl;
 			std::cout << "Player 1 --> ";
 			getline(std::cin, index);
-			player1 = stoi(index);
+			player1 = stoi(index) - 1;
 			std::cout << "Player 2 --> ";
 			getline(std::cin, index);
-			player2 = stoi(index);
+			player2 = stoi(index) - 1;
 			beginwar(plist, player1, player2);
 			getchar();
 		}

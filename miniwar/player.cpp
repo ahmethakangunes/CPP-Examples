@@ -14,12 +14,22 @@
 
 Player::Player()
 {
+	_hp = 100;
+	std::string command;
     std::cout << "Name: ";
-    getline(std::cin, _name);
+	getline(std::cin, command);
+	if (!command.empty())
+    	_name = command;
     std::cout << "Lastname: ";
-    getline(std::cin, _lastname);
+	getline(std::cin, command);
+	if (!command.empty())
+    	_lastname = command;
     std::cout << "Username: ";
-    getline(std::cin, _nickname);
+	getline(std::cin, command);
+	if (!command.empty())
+    	_nickname = command;
+	if (command == "\n")
+		std::cout << "test";
 }
 
 void Player::showplayerinfos(){
@@ -72,28 +82,56 @@ int Player::checkplayer(Player &player) {
 
 int selectgun(std::vector <Player> &plist, int player1, int player2)
 {
+	system("reset");
 	std::string command;
-	std::cout << "Please select gun for player1 "<< std::endl;
-	std::cout << "(M4A1, AK-47)Gun --> ";
-	getline(std::cin, command);
-	if (command == "M4A1" || command == "AK-47") {
-		if (command == "AK-47")
+	while (1) {
+		std::cout << "Please select gun for "<< plist[player1].getusername() << std::endl;
+		std::cout << "(M4A1, AK-47) --> ";
+		getline(std::cin, command);
+		if (command == "AK-47") {
 			plist[player1].setgun();
-		else
+			while (1) {
+				system("reset");
+				std::cout << "Please select gun for " << plist[player2].getusername() << std::endl;
+				std::cout << "(M4A1, AK-47) --> ";
+				getline(std::cin, command);
+				if (command == "AK-47") {
+					plist[player2].setgun();
+					break ;
+				}
+				if (command == "M4A1") {
+					plist[player2].setgun2();
+					break ;
+				}
+				else
+					std::cout << "Wrong gun name ! Please try again." << std::endl;
+			}
+			break ;
+		}
+		else if (command == "M4A1") {
 			plist[player1].setgun2();
+			while (1) {
+				system("reset");
+				std::cout << "Please select gun for " << plist[player2].getusername() << std::endl;
+				std::cout << "(M4A1, AK-47) --> ";
+				getline(std::cin, command);
+				if (command == "AK-47") {
+					plist[player2].setgun();
+					break ;
+				}
+				if (command == "M4A1") {
+					plist[player2].setgun2();
+					break ;
+				}
+				else
+					std::cout << "Wrong gun name ! Please try again." << std::endl;
+			}
+			break ;
+		}
+		else {
+			system("reset");
+			std::cout << "Wrong gun name ! Please try again." << std::endl;
+		}
 	}
-	else
-		return (0);
-	std::cout << "Please select gun for player2 "<< std::endl;
-	std::cout << "(M4A1, AK-47)Gun --> ";
-	getline(std::cin, command);
-	if (command == "M4A1" || command == "AK-47") {
-		if (command == "AK-47")
-			plist[player2].setgun();
-		else
-			plist[player2].setgun2();
-	}
-	else
-		return (0);
 	return (1);
 }
